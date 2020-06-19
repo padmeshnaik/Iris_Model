@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+<title> My first model</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body >
+    
+    <h1>Plant Species Prediction </h1>
+
+    <div class="login">
+         <!-- Main Input For Receiving Query to our ML -->
+        <form action= "{{ url_for('predict')}}" method="post">
+            <input type="text" name="SL" placeholder="Sepal Length" required="required" />
+            <input type="text" name="SW" placeholder="Sepal Width" required="required" />
+            <input type="text" name="PL" placeholder="Petal Length" required="required" />
+            <input type="text" name="PW" placeholder="Petal Width" required="required" />
+
+    
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    
+       <br>
+       <br>
+       <h3>{{ prediction }}</h3>
+    
+     </div>
+</body>
