@@ -40,8 +40,5 @@ def predict():
 def demo():
     if request.method == 'POST':
         if request.form['submit_button'] == 'Another':
-            return redirect(url_for("home"))
-        elif request.form['submit_button'] == 'Demo':
-            return render_template("demo.html")
-        else:
-            return render_template("Home.html",prediction="Unknown site")
+            return redirect("/")
+        
